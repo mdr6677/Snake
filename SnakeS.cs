@@ -2,9 +2,10 @@
 namespace Snake
 { 
 	public class SnakeS { //class parent of snake
-		
-		public static string axis = "+y";
-		private static SnakePix[] snakepix = new SnakePix[snakelenght];
+        public static int x = 0;
+        public static int y = 1;
+        public static string axis = "+y";
+		public static SnakePix[] snakepix = new SnakePix[snakelenght];
 		private static int snakelenght = 4;
 
 		public SnakePix[] Pixmove(SnakePix[] snakepix)
@@ -19,16 +20,16 @@ namespace Snake
 			{
 
 				case ConsoleKey.UpArrow:
-                    snakepix.[0].cord[Program.y]++;
+                    snakepix[0].cord[y]++;
                     break;
 				case ConsoleKey.DownArrow:
-                    snakepix.[0].cord[Program.y]--;
+                    snakepix[0].cord[y]--;
                     break;
 				case ConsoleKey.RightArrow:
-                    snakepix.[0].cord[Program.x]++;
+                    snakepix[0].cord[x]++;
                     break;
 				case ConsoleKey.LeftArrow:
-                    snakepix.[0].cord[Program.x]--;
+                    snakepix[0].cord[x]--;
                     break;
                 default:
 					break;

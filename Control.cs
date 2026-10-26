@@ -8,7 +8,9 @@ namespace Snake
 {
     internal class Control
     {
-       public static void Controls()
+        public static int x = 0;
+        public static int y = 1;
+        public static void Controls()
         {
           
           
