@@ -8,14 +8,12 @@
        
          static public void Main(string[] args)
          {
-          SnakeS snake = new SnakeS();
-            Apple apple = new Apple();
-            AppleSpawn(apple);
+            MainCycle.Maincycle();
           
          }
          public struct Apple()
          {
-            public int[] cord = new int[2];
+            public int[] cord = { 0, 0 };
           public bool isappleexist = false;
          }
          static public Apple AppleSpawn(Apple apple )
@@ -25,8 +23,11 @@
             apple.cord[x] = rnd.Next(51);
             apple.cord[y] = rnd.Next(11);
             apple.isappleexist = true; }
+
           
+
             return apple;
+         
          }
        
      }

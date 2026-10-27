@@ -15,12 +15,22 @@ namespace Snake
         {
             SnakeS snake = new SnakeS();
             Apple apple = new Apple();
+            
             while (true)
+
             {
-                AppleSpawn(apple);
-                GUI.SnakeDraw(SnakeS.snakepix[0]);
+                GUI.FrameInit();
+                Console.Clear();
+                Control.Controls();
+               apple.isappleexist = (snake.AppleEat(apple.cord);
+                apple = AppleSpawn(apple);
                 GUI.AppleDraw(apple);
+                GUI.SnakeDraw(SnakeS.snakepix[0]);
+              
                 GUI.FrameDraw();
+
+                Console.WriteLine();
+                Thread.Sleep(500);
             }
 
 
