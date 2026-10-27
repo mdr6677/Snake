@@ -16,18 +16,14 @@
             public int[] cord = { 0, 0 };
           public bool isappleexist = false;
          }
-         static public Apple AppleSpawn(Apple apple )
+         static public Apple AppleSpawn(Apple apple)
          {
             if (!apple.isappleexist) { 
                 Random rnd = new Random();
             apple.cord[x] = rnd.Next(51);
             apple.cord[y] = rnd.Next(11);
             apple.isappleexist = true; }
-
-          
-
-            return apple;
-         
+            return apple;     
          }
        
      }
