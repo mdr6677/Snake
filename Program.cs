@@ -20,9 +20,11 @@
          {
             if (!apple.isappleexist) { 
                 Random rnd = new Random();
-            apple.cord[x] = rnd.Next(51);
-            apple.cord[y] = rnd.Next(11);
-            apple.isappleexist = true; }
+            apple.cord[x] = rnd.Next(50);
+            apple.cord[y] = rnd.Next(10);
+            apple.isappleexist = true;
+                return apple;
+            }
             return apple;     
          }
        

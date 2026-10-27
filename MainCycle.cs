@@ -22,15 +22,16 @@ namespace Snake
                 GUI.FrameInit();
                 Console.Clear();
                 Control.Controls();
-               apple.isappleexist = snake.AppleEat(apple.cord);
+            
                 apple = AppleSpawn(apple);
+           apple.isappleexist = snake.AppleEat(apple.cord);
                 GUI.AppleDraw(apple);
                 GUI.SnakeDraw(SnakeS.snakepix[0]);
               
                 GUI.FrameDraw();
 
-                Console.WriteLine();
-                Thread.Sleep(500);
+                Console.WriteLine(SnakeS.snakepix[0].cord[0] + " " + SnakeS.snakepix[0].cord[1] + " " + apple.cord[0] + " " + apple.cord[1] + "\n " +   apple.isappleexist);
+                Thread.Sleep(250);
             }
 
 

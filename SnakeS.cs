@@ -55,15 +55,15 @@ namespace Snake
 		}
 		public bool AppleEat(int[] cord)
 		{
-			if (snakepix[0].cord == cord)
+			if (cord[0] == snakepix[0].cord[0] && cord[1] == snakepix[0].cord[1])
 			{
 				snakelenght++;
 				return false;
+				
 			}
-			else
-			{
+		
 				return true;
-			}
+			
 
 		}
 		public struct SnakePix()
