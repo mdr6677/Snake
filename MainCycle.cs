@@ -18,20 +18,24 @@ namespace Snake
             
             while (true)
 
-            {
+            {  Console.Clear();
                 GUI.FrameInit();
-                Console.Clear();
+              
                 Control.Controls();
-            
+               SnakeS.SnakeMove();
+              
+               
+
                 apple = AppleSpawn(apple);
            apple.isappleexist = snake.AppleEat(apple.cord);
-                GUI.AppleDraw(apple);
+               
+               
+               GUI.AppleDraw(apple); 
                 GUI.SnakeDraw(SnakeS.snakepix[0]);
-              
                 GUI.FrameDraw();
-
                 Console.WriteLine(SnakeS.snakepix[0].cord[0] + " " + SnakeS.snakepix[0].cord[1] + " " + apple.cord[0] + " " + apple.cord[1] + "\n " +   apple.isappleexist);
                 Thread.Sleep(250);
+                Console.WriteLine("+++++\n+++++\n+++++\n+++++\n+++++" );
             }
 
 

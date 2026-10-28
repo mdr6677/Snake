@@ -19,7 +19,7 @@ namespace Snake
                 
                 ConsoleKeyInfo keyInfo = Console.ReadKey(true);
 
-                SnakeS.SnakeMove(keyInfo);
+                SnakeS.SnakeAxis(keyInfo);
                
             }
 

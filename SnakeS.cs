@@ -31,22 +31,43 @@ namespace Snake
 			{ snakepix[i] = snakepix[i - 1]; }
 			return snakepix;
 		}
-		public static void SnakeMove(ConsoleKeyInfo keyInfo)
+		public static void SnakeMove()
+		{
+            switch (axis)
+            {
+
+                case "+y":
+                    snakepix[0].cord[y]--;
+                    break;
+                case "-y":
+                    snakepix[0].cord[y]++;
+                    break;
+                case "+x":
+                    snakepix[0].cord[x]++;
+                    break;
+                case "-x":
+                    snakepix[0].cord[x]--;
+                    break;
+                default:
+                    break;
+            }
+        }
+		public static void SnakeAxis(ConsoleKeyInfo keyInfo)
 		{
 			switch (keyInfo.Key)
 			{
 
 				case ConsoleKey.UpArrow:
-					snakepix[0].cord[y]--;
+                    axis = "+y";
 					break;
 				case ConsoleKey.DownArrow:
-					snakepix[0].cord[y]++;
-					break;
+                    axis = "-y";
+                    break;
 				case ConsoleKey.RightArrow:
-					snakepix[0].cord[x]++;
-					break;
+                    axis = "+x";
+                    break;
 				case ConsoleKey.LeftArrow:
-					snakepix[0].cord[x]--;
+					axis = "-x";
 					break;
 				default:
 					break;

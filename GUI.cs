@@ -12,13 +12,15 @@ namespace Snake
         public static int x = 0;
         public static int y = 1;
         public static char[,] frame = new char[50, 10];
+        private StringBuilder sb = new StringBuilder();
+       
         public static void FrameInit()
         {
             for (int i = 0; i < 10; i++)
             {
                 for (int j = 0; j < 50; j++)
                 {
-                    frame[j, i] = ' ';
+                    frame[j, i] = '.';
                 }
             }
           
@@ -44,6 +46,12 @@ namespace Snake
                 }
                 Console.WriteLine();
             }
+        }
+        public static void FrameDr()
+
+        {
+
+            
         }
     }
 

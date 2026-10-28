@@ -8,7 +8,19 @@
        
          static public void Main(string[] args)
          {
-            MainCycle.Maincycle();
+            while(true)
+            {
+                Console.ReadKey(true);
+   try
+            {
+   MainCycle.Maincycle();
+            }
+            catch {
+                    Console.WriteLine("GAME OVER");
+                         Console.ReadKey(true);  }
+            }
+             
+         
           
          }
          public struct Apple()
