@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
     namespace Snake
     {     
@@ -8,7 +9,8 @@
        
          static public void Main(string[] args)
          {
-            while(true)
+            Console.OutputEncoding = Encoding.UTF8;
+            while (true)
             {
                 Console.ReadKey(true);
    try
@@ -19,7 +21,8 @@
                     Console.WriteLine("GAME OVER");
                          Console.ReadKey(true);  }
             }
-             
+
+           
          
           
          }

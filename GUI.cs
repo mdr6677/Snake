@@ -26,14 +26,16 @@ namespace Snake
           
         }
 
-        public static void SnakeDraw(SnakeS.SnakePix snakepix1)
+        public static void SnakeDraw(SnakeS.SnakePix[] snakepix1)
         {
-            frame[snakepix1.cord[x], snakepix1.cord[y]] = '*';
+            for (int i = 0; i < SnakeS.snakelength; i++)
+            { frame[snakepix1[i].cord[x], snakepix1[i].cord[y]] = '□'; }
+            
          
         }
         public static void AppleDraw(Program.Apple apple)
         {
-            frame[apple.cord[x], apple.cord[y]] = '#';
+            frame[apple.cord[x], apple.cord[y]] = '*';
 
         }
         public static void FrameDraw()

@@ -15,27 +15,31 @@ namespace Snake
         {
             SnakeS snake = new SnakeS();
             Apple apple = new Apple();
-            
+               SnakeS.SnakeInit();
             while (true)
 
             {  Console.Clear();
                 GUI.FrameInit();
               
                 Control.Controls();
-               SnakeS.SnakeMove();
-              
-               
 
+               
+              SnakeS.snakepix = snake.Pixmove(SnakeS.snakepix);
+               SnakeS.SnakeMove();
+                 
                 apple = AppleSpawn(apple);
            apple.isappleexist = snake.AppleEat(apple.cord);
-               
+              
                
                GUI.AppleDraw(apple); 
-                GUI.SnakeDraw(SnakeS.snakepix[0]);
+                GUI.SnakeDraw(SnakeS.snakepix);
                 GUI.FrameDraw();
-                Console.WriteLine(SnakeS.snakepix[0].cord[0] + " " + SnakeS.snakepix[0].cord[1] + " " + apple.cord[0] + " " + apple.cord[1] + "\n " +   apple.isappleexist);
+                Console.WriteLine(SnakeS.snakepix[0].cord[0] + " " + SnakeS.snakepix[0].cord[1] + " " + apple.cord[0] + " " + apple.cord[1] + "\n " +   apple.isappleexist + " " + SnakeS.snakepix[1].cord[0] + " " + SnakeS.snakepix[1].cord[1] + " " + SnakeS.snakepix[2].cord[0] + " " + SnakeS.snakepix[2].cord[1]);
+                Console.WriteLine(SnakeS.snakelength + "🌍");
                 Thread.Sleep(250);
-                Console.WriteLine("+++++\n+++++\n+++++\n+++++\n+++++" );
+              
+              
+                
             }
 
 

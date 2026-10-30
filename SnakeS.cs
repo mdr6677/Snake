@@ -12,23 +12,40 @@ namespace Snake
 		public static int x = 0;
 		public static int y = 1;
 		public static string axis = "+y";
-		public static SnakePix[] snakepix = new SnakePix[]
-			{ new SnakePix()
-			};
-		private static int snakelenght = 4;
+public static int snakelength = 3;
+		public static SnakePix[] snakepix = new SnakePix[500];
+		public static void SnakeInit()
+		{
+            for (int i = 3; i < snakepix.Length; i++)
+            {
+				snakepix[i] = new SnakePix();
+                
+            }
+           
+		}
 	public static SnakePix[] SnakePar()
 		{
-			snakepix[0].cord[x] = 25;
-            snakepix[0].cord[y] = 5;
-            
+			snakepix[0].cord = new int[] { 25, 5 };
+            snakepix[1].cord = new int[] { 25, 6 };
+            snakepix[2].cord = new int[] { 25, 7 };
 
             return snakepix;
 		}
         public SnakePix[] Pixmove(SnakePix[] snakepix)
 		{ //each pixel take after forvard
-			
-			for (int i = snakelenght - 1; i > 0; i--)
-			{ snakepix[i] = snakepix[i - 1]; }
+
+			for (int i = snakelength - 1; i > 0; i--)
+			{
+				snakepix[i].cord[0] = snakepix[i - 1].cord[0];
+				snakepix[i].cord[1] = snakepix[i - 1].cord[1];
+            }
+			//int[] prev = snakepix[0].cord;
+			//for (int i = 1; i < arr.Length; i++)
+			//{
+			//    int cur = arr[i];   // сохранили текущее
+			//    arr[i] = prev;      // записали предыдущее
+			//    prev = cur;         // сдвинули "предыдущее"
+			//}
 			return snakepix;
 		}
 		public static void SnakeMove()
@@ -78,7 +95,7 @@ namespace Snake
 		{
 			if (cord[0] == snakepix[0].cord[0] && cord[1] == snakepix[0].cord[1])
 			{
-				snakelenght++;
+                snakelength++;
 				return false;
 				
 			}
@@ -89,7 +106,7 @@ namespace Snake
 		}
 		public struct SnakePix()
 		{
-			public int[] cord = {25,5 };
+			public int[] cord = new int[2];
 		}
 
 
