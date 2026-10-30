@@ -13,7 +13,7 @@ namespace Snake
         public static int y = 1;
         public static char[,] frame = new char[50, 10];
         private StringBuilder sb = new StringBuilder();
-       
+
         public static void FrameInit()
         {
             for (int i = 0; i < 10; i++)
@@ -26,9 +26,9 @@ namespace Snake
           
         }
 
-        public static void SnakeDraw(SnakeS.SnakePix[] snakepix1)
-        {
-            for (int i = 0; i < SnakeS.snakelength; i++)
+        public static void SnakeDraw(SnakeS.SnakePix[] snakepix1,int snakelength)
+        { 
+            for (int i = 0; i < snakelength; i++)
             { frame[snakepix1[i].cord[x], snakepix1[i].cord[y]] = '□'; }
             
          

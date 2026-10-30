@@ -12,7 +12,7 @@ namespace Snake
 		public static int x = 0;
 		public static int y = 1;
 		public static string axis = "+y";
-public static int snakelength = 3;
+       public int snakelength = 3;
 		public static SnakePix[] snakepix = new SnakePix[500];
 		public static void SnakeInit()
 		{
@@ -36,16 +36,10 @@ public static int snakelength = 3;
 
 			for (int i = snakelength - 1; i > 0; i--)
 			{
-				snakepix[i].cord[0] = snakepix[i - 1].cord[0];
-				snakepix[i].cord[1] = snakepix[i - 1].cord[1];
+				snakepix[i].cord[x] = snakepix[i - 1].cord[x];
+				snakepix[i].cord[y] = snakepix[i - 1].cord[y];
             }
-			//int[] prev = snakepix[0].cord;
-			//for (int i = 1; i < arr.Length; i++)
-			//{
-			//    int cur = arr[i];   // сохранили текущее
-			//    arr[i] = prev;      // записали предыдущее
-			//    prev = cur;         // сдвинули "предыдущее"
-			//}
+		
 			return snakepix;
 		}
 		public static void SnakeMove()
@@ -93,7 +87,7 @@ public static int snakelength = 3;
 		}
 		public bool AppleEat(int[] cord)
 		{
-			if (cord[0] == snakepix[0].cord[0] && cord[1] == snakepix[0].cord[1])
+			if (cord[x] == snakepix[0].cord[x] && cord[y] == snakepix[0].cord[y])
 			{
                 snakelength++;
 				return false;
