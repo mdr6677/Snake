@@ -15,12 +15,12 @@ namespace Snake
         {
             SnakeS snake = new SnakeS();
             Apple apple = new Apple();
-               SnakeS.SnakeInit();
-
+               SnakeS.SnakeInit(); 
+            SnakeS.axis = "+x";
             while (true)
 
             {  
-                Console.Clear();
+              //  Console.Clear();
                 GUI.FrameInit();
               
                 Control.Controls();
@@ -31,15 +31,18 @@ namespace Snake
                
               SnakeS.snakepix = snake.Pixmove(SnakeS.snakepix);
                SnakeS.SnakeMove();
-                 
+                SnakeS.SnakeFall();
              
                
                GUI.AppleDraw(apple); 
                 GUI.SnakeDraw(SnakeS.snakepix, snake.snakelength);
-                GUI.FrameDraw();
-                Console.WriteLine(SnakeS.snakepix[0].cord[0] + " " + SnakeS.snakepix[0].cord[1] + " " + apple.cord[0] + " " + apple.cord[1] + "\n " +   apple.isappleexist + " " + SnakeS.snakepix[1].cord[0] + " " + SnakeS.snakepix[1].cord[1] + " " + SnakeS.snakepix[2].cord[0] + " " + SnakeS.snakepix[2].cord[1]);
-                Console.WriteLine(snake.snakelength + "🌍");
-                Thread.Sleep(40);
+                //   GUI.FrameDraw();
+                GUI.FrameDr();
+                Console.WriteLine($"score: {snake.snakelength - 3}");
+                //Console.WriteLine(SnakeS.snakepix[0].cord[0] + " " + SnakeS.snakepix[0].cord[1] + " " + apple.cord[0] + " " + apple.cord[1] + "\n " +   apple.isappleexist + " " + SnakeS.snakepix[1].cord[0] + " " + SnakeS.snakepix[1].cord[1] + " " + SnakeS.snakepix[2].cord[0] + " " + SnakeS.snakepix[2].cord[1]);
+                //Console.WriteLine(snake.snakelength + "j");
+               
+                Thread.Sleep(150);
               
               
                 

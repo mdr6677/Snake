@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Xml.Linq;
 
     namespace Snake
     {     
@@ -9,17 +10,21 @@ using System.Text;
        
          static public void Main(string[] args)
          {
+          Console.CursorVisible = false;
             Console.OutputEncoding = Encoding.UTF8;
             while (true)
             {
+                Console.WriteLine("PRESS TO START");
                 Console.ReadKey(true);
+                Console.Clear();
    try
             {
    MainCycle.Maincycle();
             }
             catch {
                     Console.WriteLine("GAME OVER");
-                         Console.ReadKey(true);  }
+                   
+                }
             }
 
            

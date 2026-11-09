@@ -8,14 +8,25 @@ namespace Snake
 		{
 			snakepix = SnakePar();
 		}
-
-		public static int x = 0;
+       
+        public static int x = 0;
 		public static int y = 1;
 		public static string axis = "+y";
        public int snakelength = 3;
-		public static SnakePix[] snakepix = new SnakePix[500];
+		public static void SnakeFall()
+		{
+			for (int i = 1; i < snakepix.Length; i++)
+			{
+				if (snakepix[0].cord[x] == snakepix[i].cord[x] && snakepix[0].cord[y] == snakepix[i].cord[y])
+				{
+					throw new DivideByZeroException(); 
+				}
+			}
+		}
+        public static SnakePix[] snakepix = new SnakePix[500];
 		public static void SnakeInit()
 		{
+
             for (int i = 3; i < snakepix.Length; i++)
             {
 				snakepix[i] = new SnakePix();
