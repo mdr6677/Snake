@@ -8,9 +8,8 @@ using static Snake.Program;
 namespace Snake
 {
     internal class MainCycle
-    {  public static int x = 0;
-        public static int y = 1;
-
+    {  
+       
         public static void Maincycle()
         {
             SnakeS snake = new SnakeS();
@@ -24,7 +23,7 @@ namespace Snake
                 GUI.FrameInit();
               
                 Control.Controls();
-   apple = AppleSpawn(apple);
+   apple = AppleSpawn(apple, snake.snakelength);
 
            apple.isappleexist = snake.AppleEat(apple.cord);
               
@@ -42,7 +41,7 @@ namespace Snake
                 //Console.WriteLine(SnakeS.snakepix[0].cord[0] + " " + SnakeS.snakepix[0].cord[1] + " " + apple.cord[0] + " " + apple.cord[1] + "\n " +   apple.isappleexist + " " + SnakeS.snakepix[1].cord[0] + " " + SnakeS.snakepix[1].cord[1] + " " + SnakeS.snakepix[2].cord[0] + " " + SnakeS.snakepix[2].cord[1]);
                 //Console.WriteLine(snake.snakelength + "j");
                
-                Thread.Sleep(150);
+                Thread.Sleep(gamespeed);
               
               
                 

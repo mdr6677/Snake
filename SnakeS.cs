@@ -1,4 +1,5 @@
 ﻿using System;
+using static Snake.Program;
 namespace Snake
 {
 	public class SnakeS
@@ -9,11 +10,24 @@ namespace Snake
 			snakepix = SnakePar();
 		}
        
-        public static int x = 0;
-		public static int y = 1;
+       
 		public static string axis = "+y";
        public int snakelength = 3;
-		public static void SnakeFall()
+  //      public  bool SnakeApp(Apple apple)
+		//{
+		//	for (int i = 0; i < snakelength; i++)
+		//	{
+		//		if (apple.cord[x] == snakepix[i].cord[x] && apple.cord[y] == snakepix[i].cord[y])
+		//		{
+		//			return  false;
+		//		}
+				
+		//	}
+		//	return  true;
+				
+		//}
+       
+        public static void SnakeFall()
 		{
 			for (int i = 1; i < snakepix.Length; i++)
 			{
@@ -23,7 +37,7 @@ namespace Snake
 				}
 			}
 		}
-        public static SnakePix[] snakepix = new SnakePix[500];
+        public static SnakePix[] snakepix = new SnakePix[h*w];
 		public static void SnakeInit()
 		{
 

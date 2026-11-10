@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using static Snake.Program;
 //
 
 namespace Snake
@@ -22,17 +23,16 @@ namespace Snake
         //    }
            
         //}
-        public static int x = 0;
-        public static int y = 1;
-        public static char[,] frame = new char[50, 10];
-        private static StringBuilder sb = new StringBuilder("████************************************************\n*                                                  *\n*                                                  *\n*                                                  *\n*                                                  *\n*                                                  *\n*                                                  *\n*                                                  *\n*                                                  *\n*                                                  *\n*                                                  *\n****************************************************");
-   
+       
+        public static char[,] frame = new char[w, h];
+        //private static StringBuilder sb = new StringBuilder("████████████████████████████████████████████████████\n█                                                  █\n█                                                  █\n█                                                  █\n█                                                  █\n█                                                  █\n█                                                  █\n█                                                  █\n█                                                  █\n█                                                  █\n█                                                  █\n████████████████████████████████████████████████████");
+        private static StringBuilder sb = new StringBuilder("████████████████████████████████\n█                              █\n█                              █\n█                              █\n█                              █\n█                              █\n█                              █\n█                              █\n█                              █\n█                              █\n█                              █\n████████████████████████████████");
         public static void FrameInit()
         {
            
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < h; i++)
             {
-                for (int j = 0; j < 50; j++)
+                for (int j = 0; j < w; j++)
                 {
                     frame[j, i] = ' ';
                  
@@ -57,9 +57,9 @@ namespace Snake
         }
         public static void FrameDraw()
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < h; i++)
             {
-                for (int j = 0; j < 50; j++)
+                for (int j = 0; j < w; j++)
                 {
                     Console.Write(frame[j, i]);
                 }
@@ -69,14 +69,14 @@ namespace Snake
         public static void FrameDr()
 
         {
-            int s = 53;
-            for (int i = 0; i < 10; i++)
+            int s = w+3;
+            for (int i = 0; i < h; i++)
             {
-                for (int j = 0; j < 50; j++)
+                for (int j = 0; j < w; j++)
                 {
                     sb[s + j + 1] = frame[j, i];
                 }
-                s += 53;
+                s += w+3;
             }
             Console.SetCursorPosition(0, 0);
             Console.WriteLine(sb.ToString());
